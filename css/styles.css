@@ -4,10 +4,11 @@
     margin: 0;
 }
 
-/* @font-face {
+@font-face {
     font-family: mainFont;
     src: url("../fonts/AvenirNextLTPro-Regular.otf");
-} */
+    format('opentype');
+}
                                                       /****************** CSS VARIABLES  ******************/
 :root {
   --main-bg-color: #9b9b8d;
@@ -101,6 +102,7 @@
 .title {
   font-size: 60px;
   color: purple;
+  font-family: var(--main-font-family);
 }
 
 .albums {
@@ -135,15 +137,19 @@
   font-size: var(--button-font-size);
   border-radius: var(--button-border-radius);
   cursor: var(--main-cursor);
+  font-family: var(--main-font-family);
 }
 
 button:focus {
   outline: none;
 }
+
+
                                                     /****************** PLAYLIST PAGE  ******************/
 .instructions {
   width: var(--main-width);
   margin: var(--main-margin);
+  font-family: var(--main-font-family);
 }
 
 .playlist-container {
@@ -218,4 +224,5 @@ button:focus {
 .main-footer div {
   width: var(--main-width);
   margin: var(--main-margin);
+  font-family: var(--main-font-family);
 }
