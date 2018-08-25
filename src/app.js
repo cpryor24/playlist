@@ -9,9 +9,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
   axios.get(baseURL)
     .then(function(response){
-      for(let i = 0; i < response.data.results.length - 2; i++){
+      for(let i = 0; i < response.data.results.length; i++){
         covers.push(response.data.results[i].cover_art)
-        coverArt.insertAdjacentHTML('beforeend', `<div id="albumCovers"><img src="images/${covers[i]}" alt=""></div>`)
+      }
+
+      let j = 0;
+      let random; // variable used to contain controlled random number
+      while (j < covers.length - 2){ // while all of array elements haven't been cycled through
+        random = Math.floor(Math.random() * covers.length) // generate random number between 0 and array length-2
+        if (covers[random] != "selected"){ // if cover art hasn't been marked as "selected"
+          coverArt.insertAdjacentHTML('beforeend', `<div id="albumCovers"><img class="covers" src=images/${covers[random]} alt=""></div>`)// insert cover art to page
+          covers[random] = "selected"; // mark cover art as selected
+          j++
+        }
       }
     });
 

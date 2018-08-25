@@ -104,17 +104,26 @@
 }
 
 .albums {
-  background-image: url("../resources/track.jpg");
-  background-size: cover;
-  /* opacity: 0.19; */
+  overflow: hidden;
 }
 
-#albumCovers img{
+.bg-track {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.19;
+  z-index: -1;
+}
+
+.covers {
   height: 200px;
   width: 250px;
   margin: 5px;
-  align-items: center;
+  align-self: flex-start;
 }
+
                                                       /****************** BUTTON COMPONENT  ******************/
 .tracks,
 #clear,
@@ -144,7 +153,6 @@ button:focus {
 #playlistTracks {
   overflow: scroll;
 }
-
 
 .playlist-img img{
   height: 100px;
@@ -186,6 +194,18 @@ button:focus {
   width: var(--main-width);
   margin: var(--main-margin);
 }
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
                                                           /****************** FOOTER  ******************/
 .main-footer {
   background-color: var(--secondary-bg-color);
