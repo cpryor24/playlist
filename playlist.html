@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Playlist</title>
+</head>
+<body>
+  <header class="playlist-header">
+    <div class="instructions">click an album to add its tracks to the bin</div>
+  </header>
+  <main class="playlist-container">
+    <section id="playlistTracks"></section>
+    <section id="playlistBin"></section>
+    <div id="playlistButtons">
+      <button id="clear">clear tracks</button>
+      <button id="submit">submit bin</button>
+    </div>
+
+  </main>
+  <footer class="main-footer">
+    <div>&copy; 2018 Christopher Pryor</div>
+  </footer>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="src/playlist.js"></script>
+</body>
+</html>

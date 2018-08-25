@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* @font-face {
+    font-family: mainFont;
+    src: url("../fonts/AvenirNextLTPro-Regular.otf");
+} */
+                                                      /****************** CSS VARIABLES  ******************/
+:root {
+  --main-bg-color: #9b9b8d;
+  --splash-bg-height: 6vh;
+  --main-bg-height: 88vh;
+  --main-color: white;
+  --main-cursor: pointer;
+  --main-font-family: mainFont;
+  --main-width: 90vw;
+  --main-margin: 0 auto;
+                                                      /****************** PLAYLIST STYLING  ******************/
+  --playlistHeader-bg-height: 15vh;
+  --playlist-bg-height: 80vh;
+  --secondary-bg-color: #68685b;
+                                                      /****************** FOOTER PADDING  ******************/
+  --main-padding: 15px 0 5px 60px;
+                                                      /****************** BUTTON STYLING  ******************/
+  --button-bg-color: #353526;
+  --button-padding: 5px;
+  --button-height: 44px;
+  --button-width: 220px;
+  --button-border-radius: 5px;
+  --button-font-size: 20px;
+}
+                                                          /****************** HEADER  ******************/
+.splash-header {
+  height: var(--splash-bg-height);
+  background-color: var(--main-bg-color);
+}
+
+.playlist-header {
+  font-size: 30px;
+  height: var(--playlistHeader-bg-height);
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+                                                        /****************** FLEXBOX  ******************/
+.splash-container,
+.main-footer,
+.playlist-header,
+.playlist-container,
+.track-bin,
+.albums,
+#playlistTracks {
+  display: flex;
+}
+
+.splash-container,
+.main-footer,
+.playlist-header,
+ #playlistTracks {
+  flex-flow: row nowrap;
+}
+
+#playlistTracks {
+  align-items: flex-start;
+}
+
+.playlist-container,
+.track-bin,
+.albums {
+  flex-flow: column nowrap;
+}
+
+.splash-container,
+.playlist-container,
+.track-bin,
+.albums {
+  justify-content: center;
+}
+
+.playlist-header {
+  align-items: flex-end;
+}
+
+.title,
+.tracks,
+#albumCovers {
+  align-self: center;
+}
+                                                      /****************** SPLASH PAGE  ******************/
+.splash-container {
+  height: var(--main-bg-height);
+}
+
+.track-bin,
+.albums {
+  width: 50vw;
+}
+
+.title {
+  font-size: 60px;
+  color: purple;
+}
+
+.albums {
+  background-image: url("../resources/track.jpg");
+  background-size: cover;
+  /* opacity: 0.19; */
+}
+
+#albumCovers img{
+  height: 200px;
+  width: 250px;
+  margin: 5px;
+  align-items: center;
+}
+                                                      /****************** BUTTON COMPONENT  ******************/
+.tracks,
+#clear,
+#submit {
+  background-color: var(--button-bg-color);
+  height: var(--button-height);
+  width: var(--button-width);
+  color: var(--main-color);
+  font-size: var(--button-font-size);
+  border-radius: var(--button-border-radius);
+  cursor: var(--main-cursor);
+}
+
+button:focus {
+  outline: none;
+}
+                                                    /****************** PLAYLIST PAGE  ******************/
+.instructions {
+  width: var(--main-width);
+  margin: var(--main-margin);
+}
+
+.playlist-container {
+  height: var(--playlist-bg-height);
+}
+
+#playlistTracks {
+  overflow: scroll;
+}
+
+
+.playlist-img img{
+  height: 100px;
+  cursor: var(--main-cursor);
+  margin: 10px 25px 0 25px;
+}
+
+.playlist-img:nth-child(1) {
+  margin-left: 50px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-bg-color);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+#playlistBin {
+  height: 200px;
+  width: var(--main-width);
+  margin: var(--main-margin);
+  border: 2px solid black;
+  background-color: lightgrey;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  overflow: scroll;
+}
+
+.playlist-title {
+  padding-left: 5px;
+}
+
+#playlistButtons {
+  height: 32vh;
+  width: var(--main-width);
+  margin: var(--main-margin);
+}
+                                                          /****************** FOOTER  ******************/
+.main-footer {
+  background-color: var(--secondary-bg-color);
+  height: var(--splash-bg-height);
+  color: var(--main-color);
+  align-items: center;
+  font-family: var(--main-font-family);
+}
+
+.main-footer div {
+  width: var(--main-width);
+  margin: var(--main-margin);
+}
