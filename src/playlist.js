@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
       function getPlaylist(e) {
         for(let j = 0; j < response.data.results.length; j++){
           if(parseInt(e.target.parentElement.id) === response.data.results[j].id){
-            playlistBin.insertAdjacentHTML('beforeend', `<div class="playlist-title">${response.data.results[j].artist}: ${response.data.results[j].title}</div>`);
+            playlistBin.insertAdjacentHTML('beforeend', `<div class="playlist-title">${response.data.results[j].artist}: ${response.data.results[j].title}</div> `);
           }
         }
       }
@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function onSubmit(e) {
     e.preventDefault();
-    axios.post(postURL)
+    axios.post(postURL, {
+      playList: playlistBin.textContent
+    })
     .then(function(result){
       if(playlistBin.textContent !== ''){
         success.textContent = result.data;
